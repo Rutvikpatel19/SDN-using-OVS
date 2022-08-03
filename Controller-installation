@@ -1,5 +1,6 @@
 Before we start the installation we have to give static or dynamic ip to linux docker vm
 
+Ping google.com # to check internet conectivity.
 
 apt-get update      #this will update the repositories and prepare linux for installation.
 
@@ -31,4 +32,10 @@ tar zxvf distribution-karaf-0.3.0-Lithium.tar.gz #to unzip the comressed file
 
 ./bin/karaf # to run open-day-light application
 
-#Now at this point you are hosting a apache server 
+#Now at this point you are hosting a apache server on the vm's ip add which is staticaly or dynamicaly assigned.
+
+feature:install odl-restconf-all odl-openflowplugin-all odl-l2switch-all odl-mdsal-all odl-yangtools-common
+# above command will install necessary features for interfacing the GUI interface of ODL controller
+
+# to access the GUI connect the controller to a web browers (any web browser running on linux or windows)
+# use following link to acces the web hosted page. "vmsipaddress:8181/index.html" (ip is the eth0 interface ip of the vm)
