@@ -1,0 +1,34 @@
+Before we start the installation we have to give static or dynamic ip to linux docker vm
+
+
+apt-get update      #this will update the repositories and prepare linux for installation.
+
+apt-get install openjdk-8-jdk        #for this project we will need java version 8 any other version will not work.
+
+java -version                #to check Java version 
+
+update-java-alternatives --list   # this open will show you all the given java options available
+
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::") # this option will add java to you default acces path
+ #above java export may not work for you plz look for alternatives oon internet.
+
+echo $JAVA_HOME    # Verification of java installaion
+
+apt install common-software-properties     # to install all the minimal software files as this verson of docker that we are using will not have all the options in it. 
+
+wget https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.3.0-Lithium/distribution-karaf-0.3.0-Lithium.tar.gz
+#above command will download ODL (Open Daylight Controller) which we will you to control OVS
+#wget command is needed to be installed so use apt-get install wget to install this repository.
+
+apt install tar #to unzip file
+apt install uzip #to unzip file
+
+#navigate to the download folder and look for file name ="distribution-karaf-0.3.0-Lithium.tar.gz" using cd and ls command
+
+tar zxvf distribution-karaf-0.3.0-Lithium.tar.gz #to unzip the comressed file
+
+#after the unzip operation finishes navigate to "distribution-karaf-0.3.0-Lithium" folder
+
+./bin/karaf # to run open-day-light application
+
+#Now at this point you are hosting a apache server 
