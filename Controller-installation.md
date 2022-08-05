@@ -90,3 +90,5 @@ feature:install odl-restconf-all odl-openflowplugin-all odl-l2switch-all odl-mds
 #### To access the GUI connect the controller to a web browers (any web browser running on linux or windows)
 
 #### use following link to acces the web hosted page. "vmsipaddress:8181/index.html" (ip is the eth0 interface ip of the vm)
+
+#### keep the controller running for OVS to connect to it.
